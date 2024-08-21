@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCaretDown } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 const NavLinks = [
   {
@@ -19,6 +20,23 @@ const NavLinks = [
   },
 ];
 
+const DropdownLinks = [
+  {
+    id: 1,
+    name: "Vegetables",
+    link: "/#",
+  },
+  {
+    id: 2,
+    name: "Fruits",
+    link: "/#",
+  },
+  {
+    id: 3,
+    name: "Grains",
+    link: "/#",
+  },
+];
 const Navbar = () => {
   return (
     <>
@@ -55,20 +73,28 @@ const Navbar = () => {
                 </a>
 
                 {/* Dropdown section  */}
-                <div>
+                <div className="absolute z-[9999] hidden group-hover:block w-[200px] bg-white text-black shadow-md p-2 ">
                   <ul>
-                    {DropdownLinks.map((data) => (
-                      <li>
+                    {DropdownLinks.map(({ id, name, link }) => (
+                      <li key={id}>
                         <a
-                          href="/#"
+                          href={link}
                           className="text-xl inline-block w-full rounded-md p-2 hover:bg-primary/20"
                         >
-                          {data}
+                          {name}
                         </a>
                       </li>
                     ))}
                   </ul>
                 </div>
+              </li>
+
+              {/* Login Button section  */}
+              <li>
+                <button className="flex justify-center items-center gap-2 bg-secondary text-xl h-[40px] text-white px-5 py-2 hover:scale-105 duration-300">
+                  <FaUser />
+                  My Account
+                </button>
               </li>
             </ul>
           </div>
