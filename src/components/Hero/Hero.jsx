@@ -15,7 +15,7 @@ const BgStyle = {
 const Hero = () => {
   return (
     <>
-      <div className="reLative z-[-1]">
+      <div style={BgStyle} className="reLative z-[-1]">
         <div className="container py-16 sm:py-0">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center min-h-[600px]">
             {/* text-content section  */}

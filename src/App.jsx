@@ -1,12 +1,14 @@
-import React from "react";
-import Navbar from "./components/navar.jsx/Navbar";
+import React from 'react';
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Banner from "./components/Banner/Banner.jsx";
 import Hero from "./components/Hero/Hero";
 
 const App = () => {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
-      <Hero/>
+      <Hero />
+      <Banner />
     </div>
   );
 };
