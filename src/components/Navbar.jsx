@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCaretDown } from "react-icons/fa";
 
 const NavLinks = [
   {
@@ -38,6 +39,37 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+
+              {/* Simple dropdown and links */}
+              <li className="cursor-pointer group">
+                <a
+                  href="/#"
+                  className="inline-block hover:text-primary text-xl font-semibold"
+                >
+                  <div className="flex items-center gap-[2px] py-2">
+                    Dropdown
+                    <span>
+                      <FaCaretDown className="group-hover:rotate-180 duration-300" />
+                    </span>
+                  </div>
+                </a>
+
+                {/* Dropdown section  */}
+                <div>
+                  <ul>
+                    {DropdownLinks.map((data) => (
+                      <li>
+                        <a
+                          href="/#"
+                          className="text-xl inline-block w-full rounded-md p-2 hover:bg-primary/20"
+                        >
+                          {data}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
